@@ -1,0 +1,36 @@
+header {
+    margin-bottom: 2%;
+}
+
+.goBack {
+    display: flex;
+    align-items: center;
+    height: 4em;
+    width: 90%;
+    margin: 0 auto;
+
+    img:nth-child(2) {
+        margin-left: 10.5px;
+    }
+}
+
+.create-gif {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 400px;
+    border: 2px solid orange;
+    margin-bottom: 72px;
+
+    .captureGif {
+        border: 2px solid orange;
+        width: 480px;
+        height: 360px;
+    }
+}
+
+#NOTAS {
+    color: red;
+    font-size: 3em;
+}

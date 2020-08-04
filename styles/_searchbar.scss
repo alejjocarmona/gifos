@@ -1,0 +1,49 @@
+.searchbar {
+    height: 5em;
+    margin-bottom: 4em;
+    padding: 2px;
+
+    .searchbar_title {
+        padding: 0.25em 0 0.25em 0.25em;
+        margin-bottom: 0.5em;
+    }
+
+    h1 {
+        font-size: 0.875em;
+        line-height: 1.1em;
+        color: white;
+    }
+
+    &_input {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        input {
+            width: 90%;
+            height: 3em;
+            font-family: $main-font;
+            color: #B4B4B4;
+            border: 1px solid #979797;
+            padding: 0.5em;
+            box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+            outline: none;
+        }
+
+        button {
+            display: flex;
+            font-family: $main-font;
+            padding: 0.4em 0.6em 0.4em 0.6em;
+            border: 1px solid #808080;
+            box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+            outline: none;
+
+            img {
+                width: 16px;
+                height: 16px;
+                padding-right: 0.4em;
+            }
+        }
+        
+    }
+}

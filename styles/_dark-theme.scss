@@ -1,0 +1,52 @@
+.dark-theme {
+    background-color: $dark-background;
+
+    .bar_title {
+        background-image: $box-gradient-dark-theme;
+    }
+
+    .navigation_menu-button {
+        @include nav-button-dark-theme;
+    }
+
+    .navigation_menu-link {
+        a {
+            color: white;
+        }
+    }
+
+    .navigation_button_dropbutton {
+        p, span {
+            @include nav-button-dark-theme;
+        }
+    }
+    
+    .searchbar {
+        @include box-content-dark-theme;
+    
+        &_title {
+            background-image: $box-gradient-dark-theme;
+        }
+
+        button {
+            background-color: #B4B4B4;
+            color: #8F8F8F;
+        }
+    }
+
+    section {
+
+        h2 {
+            border: 1px solid #2E32FB;
+            box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #110038;
+        }
+
+        .suggestions_gif {
+            @include box-content-dark-theme;
+
+            .suggestions_gif_title {
+                background-image: $box-gradient-dark-theme;
+            }
+        }
+    }
+}

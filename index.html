@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Crea tus GIFs, búscalos en la web o simplemente mira los GIFs del momento!">
+    <meta name="keywords" content="gif creation, gif, meme, gifs">
+    <meta name="author" content="Alejandro Carmona. 2020 alejocarmona93@gmail.com">
+    <link rel="shortcut icon" href="./static/world-gif.gif" type="image/gif">
+    <link rel="icon" href="./static/world-gif.gif" type="image/gif">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <title>GifOS</title>
+</head>
+
+<body class="light-theme">
+    <header>
+        <div class="bar_title">
+            <h1>
+                ¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803
+            </h1>
+        </div>
+
+        <!---------------------- Menú GIFOS ---------------------->
+
+        <nav class="navigation">
+            <img class="logo" src="./static/gifOF_logo.png"
+                alt="Logo de la página con la palabra gif.os, las letras tienen relleno azul claro con sombra azul oscuro">
+            <div class="navigation_menu">
+                <div class="navigation_menu-button">
+                    <a href="upload.html">Crear Guifos</a>
+                </div>
+                <div class="navigation_menu-button navigation_button_dropbutton dropdown">
+                    <!-- TODO Javascript - dropdown estados -->
+                    <p class="dropdown">Elegir tema</p>
+                    <span><img class="dropdown-arrow dropdown" src="/static/dropdown.svg"
+                            alt="triángulo para activar el botón: Elegir Tema"></span>
+                    <div id="themeDropdown" class="navigation_button_content dropdown-content">
+                        <div>Sailor Day</div>
+                        <div>Sailor Night</div>
+                    </div>
+                </div>
+                <div class="navigation_menu-link">
+                    <a href="upload.html#misGuifos"><span>M</span>is Guifos</a>
+                </div>
+            </div>
+        </nav>
+
+        <!---------------------- Barra de búsqueda ---------------------->
+        <!-- TODO estados -->
+        <div class="searchbar">
+            <div class="searchbar_title">
+                <h1>Buscar</h1>
+            </div>
+            <div class="searchbar_input">
+                <input id="searchGif" type="search" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
+                <button id="searchButton"><img src="./static/lupa_inactive.svg" alt="Lupa al lado del botón buscar">
+                    Buscar
+                </button>
+            </div>
+
+        </div>
+
+    </header>
+    <section class="suggestions">
+        <h2 class="section_title">
+            Hoy te sugerimos:
+        </h2>
+        <div class="suggestions_gif_container">
+            <div class="suggestions_gif">
+                <div class="suggestions_gif_title">
+                    <h3 class="gif_title">#Name</h3>
+                    <img class="close-button" src="./static/button3.svg" alt="">
+                </div>
+            </div>
+            <div class="suggestions_gif">
+                <div class="suggestions_gif_title">
+                    <h3 class="gif_title">#Name</h3>
+                    <img class="close-button" src="./static/button3.svg" alt="">
+                </div>
+            </div>
+            <div class="suggestions_gif">
+                <div class="suggestions_gif_title">
+                    <h3 class="gif_title">#Name</h3>
+                    <img class="close-button" src="./static/button3.svg" alt="">
+                </div>
+            </div>
+            <div class="suggestions_gif">
+                <div class="suggestions_gif_title">
+                    <h3 class="gif_title">#Name</h3>
+                    <img class="close-button" src="./static/button3.svg" alt="">
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="trending" id="trending">
+        <h2 class="section_title" id="trendingTitle">
+            Tendencias:
+        </h2>
+        <div class="trending_gif_container"> <!--TODO mejorar funcionalidad-->
+            <div class="trending_gif gif_1"></div>
+            <div class="trending_gif gif_2"></div>
+            <div class="trending_gif gif_3"></div>
+            <div class="trending_gif gif_4"></div>
+            <div class="trending_gif gif_5"></div>
+            <div class="trending_gif gif_6"></div>
+            <div class="trending_gif gif_7"></div>
+            <div class="trending_gif gif_8"></div>
+            <div class="trending_gif gif_9"></div>
+            <div class="trending_gif gif_10"></div>
+        </div>
+    </section>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
