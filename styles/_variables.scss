@@ -1,9 +1,16 @@
-/*---------- Fuente ----------*/
+/*---------- General ----------*/
 
 $main-font: 'Chakra Petch', Arial, Helvetica, sans-serif;
 
 body {
     font-family: $main-font;
+}
+
+@mixin gif-titles {
+    color: white;
+    font-size: 0.875em;
+    display: flex;
+    justify-content: space-between;
 }
 
 /*---------- Colores Light Theme ----------*/

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Crea tus GIFs, búscalos en la web o simplemente mira los GIFs del momento!">
     <meta name="keywords" content="gif creation, gif, meme, gifs, funny gifs">
-    <meta name="author" content="Alejandro Carmona Clavijo. 2020 alejocarmona93@gmail.com">
+    <meta name="author" content="Alejandro Carmona. 2020 alejocarmona93@gmail.com">
     <link rel="shortcut icon" href="./static/world-gif.gif" type="image/gif">
     <link rel="icon" href="./static/world-gif.gif" type="image/gif">
     <link rel="stylesheet" href="./styles/main.css">
@@ -53,7 +53,7 @@
         <!-- TODO estados -->
         <div class="searchbar">
             <div class="searchbar_title">
-                <h1>BuscaR</h1>
+                <h1>Buscar</h1>
             </div>
             <div class="searchbar_input">
                 <input id="searchGif" type="search" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
@@ -75,11 +75,10 @@
                     <h3 class="gif_title">#Name</h3>
                     <img class="close-button" src="./static/button3.svg" alt="">
                 </div>
-            </div>
-            <div class="suggestions_gif">
-                <div class="suggestions_gif_title">
-                    <h3 class="gif_title">#Name</h3>
-                    <img class="close-button" src="./static/button3.svg" alt="">
+                <div class="see-more" id="seeMore">
+                    <p>
+                        Ver más...
+                    </p>
                 </div>
             </div>
             <div class="suggestions_gif">
@@ -87,11 +86,32 @@
                     <h3 class="gif_title">#Name</h3>
                     <img class="close-button" src="./static/button3.svg" alt="">
                 </div>
+                <div class="see-more" id="seeMore">
+                    <p>
+                        Ver más...
+                    </p>
+                </div>
             </div>
             <div class="suggestions_gif">
                 <div class="suggestions_gif_title">
                     <h3 class="gif_title">#Name</h3>
                     <img class="close-button" src="./static/button3.svg" alt="">
+                </div>
+                <div class="see-more" id="seeMore">
+                    <p>
+                        Ver más...
+                    </p>
+                </div>
+            </div>
+            <div class="suggestions_gif">
+                <div class="suggestions_gif_title">
+                    <h3 class="gif_title">#Name</h3>
+                    <img class="close-button" src="./static/button3.svg" alt="">
+                </div>
+                <div class="see-more" id="seeMore">
+                    <p>
+                        Ver más...
+                    </p>
                 </div>
             </div>
         </div>
@@ -101,18 +121,7 @@
         <h2 class="section_title" id="trendingTitle">
             Tendencias:
         </h2>
-        <div class="trending_gif_container"> <!--TODO mejorar funcionalidad-->
-            <div class="trending_gif gif_1"></div>
-            <div class="trending_gif gif_2"></div>
-            <div class="trending_gif gif_3"></div>
-            <div class="trending_gif gif_4"></div>
-            <div class="trending_gif gif_5"></div>
-            <div class="trending_gif gif_6"></div>
-            <div class="trending_gif gif_7"></div>
-            <div class="trending_gif gif_8"></div>
-            <div class="trending_gif gif_9"></div>
-            <div class="trending_gif gif_10"></div>
-        </div>
+        <div class="trending_gif_container"></div>
     </section>
     <script src="./js/main.js"></script>
 </body>

@@ -16,18 +16,17 @@ section {
             width: 23%;
             height: 260px;
             padding: 2px;
+            position: relative; 
 
             &_title {
-                color: white;
-                font-size: 0.875em;
-                display: flex;
-                justify-content: space-between;
-                padding: 0.2em;
+                @include gif-titles;
                 margin-bottom: 2px;
+                padding: 0.2em;
 
                 .close-button {
                     width: 16px;
                     height: 14px;
+                    cursor: pointer;
                 }
             }
 
@@ -36,33 +35,61 @@ section {
                 height: 238px;
                 object-fit: cover;
             }
+
+            .see-more {
+                width: 81px;
+                height: 34px;
+                position: absolute;
+                bottom: 15px;
+                left: 7px;
+                color: #fff;
+                border: 1px solid #4C2F99;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+
+                p {
+                    font-size: 0.9em;
+                    line-height: 18px;
+                }
+            }
         }
     }
 
     .trending_gif_container {
-        height: 800px;
         margin-bottom: 2em;
         display: grid;
-        grid-template-columns: repeat (4, 1fr);
-        grid-template-rows: repeat(3, 250px);
-        column-gap: 1.333333%;
-        row-gap: 2%;
+        grid-template: repeat(3, 298px) / repeat(4, 1fr);
+        grid-gap: 1em;
+        grid-auto-flow: row dense;
 
-        .gif_5 {
-            grid-column: 1 / 3;
-            grid-row: 2 / 3;
-        }
-
-        .gif_10 {
-            grid-column: 3 / 5;
-            grid-row: 3 / 4;
+        .double_gif {
+            grid-column-start: 2 span;
         }
 
         .trending_gif {
+            position: relative;
+            width: 100%;
+            height: 298px;
+
             img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+            }
+
+            &_title {
+                position: absolute;
+                bottom: 0px;
+                width: 100%;
+                padding: 0.2em 0;
+                @include gif-titles;
+                display: none;
+
+                p {
+                    padding-left:4px;
+                }
             }
         }
     }

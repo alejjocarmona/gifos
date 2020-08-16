@@ -3,7 +3,8 @@ const URL = "http://api.giphy.com/v1/gifs/search?";
 let gifCategory = "watchmen";
 //"http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=YOUR_API_KEY&limit=5"
 let suggestionNode = document.querySelectorAll(".suggestions_gif");
-let trendingNode = document.querySelectorAll(".trending_gif");
+let trendingGifContainer = document.querySelector(".trending_gif_container");
+let gifs = [];
 let gifResults = [];
 
 //Información traída desde la API para incluir en GifOS
@@ -13,24 +14,47 @@ const renderSuggestion = async (responseData) => {
         suggestionGif.src = await responseData[i].images.fixed_height.url;
         suggestionNode[i].appendChild(suggestionGif);
     }
-    console.log(suggestionNode);
 };
 
 // TRENDING Y RESULTADO DE BUSQUEDA
 const renderTrend = async (responseData) => {
-    for (let i of trendingNode.keys()) {
-        let trendingGif = document.createElement("img");
+    //creación dinámica del ortis :)
+    for (let i of responseData.keys()) {
+        //el div para el gif
+        let gifContainer = document.createElement("div");
+        gifContainer.className = "trending_gif";
+        // el gif
+        trendingGif = document.createElement("img");
         trendingGif.className = "oldGif";
         trendingGif.src = await responseData[i].images.fixed_height.url;
-        trendingNode[i].appendChild(trendingGif);
+        if ((responseData[i].images["480w_still"].width/responseData[i].images["480w_still"].height) > 1.8) {
+            gifContainer.className = "trending_gif double_gif";      
+        }
+        //el div para el title
+        titleContainer = document.createElement("div");
+        titleContainer.className = "trending_gif_title";
+        //el título
+        title = document.createElement("p");
+        //TODO traer título de la API
+        title.innerHTML = "#hashstagUno #hashtagDos";
+        //agregar las cositas :3
+        titleContainer.appendChild(title)
+        gifContainer.appendChild(titleContainer);
+        gifContainer.appendChild(trendingGif);
+        trendingGifContainer.appendChild(gifContainer);
     }
     gifResults = document.querySelectorAll(".oldGif");
     return gifResults;
 }
 
 const renderSearch = async (responseData) => {
+    gifs = document.querySelectorAll(".trending_gif");
     for (let i = 0; i < gifResults.length; i++) {
+        gifs[i].className = "trending_gif";
         gifResults[i].src = await responseData[i].images.fixed_height.url;
+        if ((responseData[i].images["480w_still"].width/responseData[i].images["480w_still"].height) > 1.77) {
+            gifs[i].className = "trending_gif double_gif";
+        }
     }
 }
 
@@ -54,8 +78,6 @@ document.getElementById("searchButton").addEventListener("click", function() {
         .then((response) => renderSearch(response))
         .catch((error) => console.log(error, "Oh no! algo salió mal :("));
 });
-
-//TODO remover srcs y poner los nuevos
 
 //trending Gifs
 dataApi()

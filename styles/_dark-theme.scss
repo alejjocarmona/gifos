@@ -44,7 +44,19 @@
         .suggestions_gif {
             @include box-content-dark-theme;
 
+            .see-more {
+                background: #2E32FB;
+                box-shadow: inset -2px -2px 0 0 #2124B3, inset 2px 2px 0 0 #FFFFFF;
+            }
+
             .suggestions_gif_title {
+                background-image: $box-gradient-dark-theme;
+            }
+        }
+
+        .trending_gif {
+
+            &_title {
                 background-image: $box-gradient-dark-theme;
             }
         }
