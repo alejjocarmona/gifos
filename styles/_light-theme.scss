@@ -12,6 +12,14 @@
     .navigation_menu-link {
         a {
             color: black;
+
+            &:hover {
+                border-color: #110038;
+            }
+
+            &:active {
+                color: #887998;
+            }
         }
     }
 
@@ -34,6 +42,12 @@
         }
     }
 
+    .searchtags {
+        .tag {
+            @include extra-button-light-theme;
+        }
+    }
+
     section {
 
         h2 {
@@ -45,8 +59,7 @@
             @include box-content-light-theme;
 
             .see-more {
-                background-color: #4180F6;
-                box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+                @include extra-button-light-theme;
             }
             
             &_title {
@@ -55,6 +68,7 @@
         }
 
         .trending_gif {
+            background-color: #ebebeb;
 
             &_title {
                 background-image: $box-gradient-light-theme;

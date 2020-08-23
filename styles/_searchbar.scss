@@ -1,6 +1,6 @@
 .searchbar {
     height: 5em;
-    margin-bottom: 4em;
+    margin-bottom: 0.8em;
     padding: 2px;
 
     .searchbar_title {
@@ -45,5 +45,20 @@
             }
         }
         
+    }
+}
+
+.searchtags {
+    display: flex;
+    margin-bottom: 3em;
+
+    .tag {
+        margin-right: 0.5em;
+        @include extra-button;
+
+        p {
+            font-size: 0.9em;
+            padding: 0.5em;
+        }
     }
 }

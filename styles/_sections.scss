@@ -38,16 +38,10 @@ section {
 
             .see-more {
                 width: 81px;
-                height: 34px;
                 position: absolute;
                 bottom: 15px;
                 left: 7px;
-                color: #fff;
-                border: 1px solid #4C2F99;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                cursor: pointer;
+                @include extra-button;
 
                 p {
                     font-size: 0.9em;
@@ -91,6 +85,21 @@ section {
                     padding-left:4px;
                 }
             }
+        }
+    }
+
+    .end-message {
+        font-size: 2em;
+        margin: 16px;
+        text-align: center;
+
+        p {
+            margin-bottom: 1em;
+        }
+        
+        img {
+            width: 256px;
+            height: auto;
         }
     }
 }

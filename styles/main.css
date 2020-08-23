@@ -74,7 +74,7 @@ body {
   line-height: 1em;
 }
 
-.navigation, .searchbar, .suggestions, .trending, .misGuifos, .create-gif {
+.navigation, .searchbar, .suggestions, .trending, .misGuifos, .create-gif, .searchtags {
   width: 85%;
   margin: 0 auto;
 }
@@ -115,6 +115,20 @@ body {
   width: 9em;
   height: 2.25em;
   border: 1px solid #110038;
+  position: relative;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  /*TODO clase extra &:hover {
+                &::after {
+                    content: '';
+                    border: 1px dotted #110038;
+                    width: 8.6em;
+                    height: 1.8em;
+                    position: absolute;
+                    margin: 2px;
+                    top: 0px;
+                }
+            } */
 }
 
 .navigation_menu-button a, .navigation_menu-button div {
@@ -149,7 +163,12 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border: 1px dotted transparent;
+  padding-left: 4px;
+  padding-right: 16px;
   cursor: pointer;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
 }
 
 .navigation_menu-link a span {
@@ -207,7 +226,7 @@ body {
 
 .searchbar {
   height: 5em;
-  margin-bottom: 4em;
+  margin-bottom: 0.8em;
   padding: 2px;
 }
 
@@ -264,6 +283,35 @@ body {
   padding-right: 0.4em;
 }
 
+.searchtags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 3em;
+}
+
+.searchtags .tag {
+  margin-right: 0.5em;
+  height: 34px;
+  color: #fff;
+  border: 1px solid #4C2F99;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.searchtags .tag p {
+  font-size: 0.9em;
+  padding: 0.5em;
+}
+
 section h2 {
   background-color: #FFFAFE;
   font-size: 0.9em;
@@ -316,10 +364,10 @@ section .suggestions_gif_container .suggestions_gif img {
 
 section .suggestions_gif_container .suggestions_gif .see-more {
   width: 81px;
-  height: 34px;
   position: absolute;
   bottom: 15px;
   left: 7px;
+  height: 34px;
   color: #fff;
   border: 1px solid #4C2F99;
   display: -webkit-box;
@@ -386,6 +434,21 @@ section .trending_gif_container .trending_gif_title {
 
 section .trending_gif_container .trending_gif_title p {
   padding-left: 4px;
+}
+
+section .end-message {
+  font-size: 2em;
+  margin: 16px;
+  text-align: center;
+}
+
+section .end-message p {
+  margin-bottom: 1em;
+}
+
+section .end-message img {
+  width: 256px;
+  height: auto;
 }
 
 header {
@@ -457,6 +520,14 @@ header {
   color: black;
 }
 
+.light-theme .navigation_menu-link a:hover {
+  border-color: #110038;
+}
+
+.light-theme .navigation_menu-link a:active {
+  color: #887998;
+}
+
 .light-theme .navigation_button_dropbutton p, .light-theme .navigation_button_dropbutton span {
   background: #F7C9F3;
   -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
@@ -477,6 +548,12 @@ header {
 .light-theme .searchbar button {
   background-color: #E6E6E6;
   color: #B4B4B4;
+}
+
+.light-theme .searchtags .tag {
+  background-color: #4180F6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
 }
 
 .light-theme section h2 {
@@ -500,6 +577,10 @@ header {
 .light-theme section .suggestions_gif_title {
   background-image: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
   background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+}
+
+.light-theme section .trending_gif {
+  background-color: #ebebeb;
 }
 
 .light-theme section .trending_gif_title {
@@ -526,6 +607,14 @@ header {
   color: white;
 }
 
+.dark-theme .navigation_menu-link a:hover {
+  border-color: #ffffff;
+}
+
+.dark-theme .navigation_menu-link a:active {
+  color: #888099;
+}
+
 .dark-theme .navigation_button_dropbutton p, .dark-theme .navigation_button_dropbutton span {
   background: #EE3EFE;
   -webkit-box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
@@ -546,6 +635,12 @@ header {
 .dark-theme .searchbar button {
   background-color: #B4B4B4;
   color: #8F8F8F;
+}
+
+.dark-theme .searchtags .tag {
+  background: #2E32FB;
+  -webkit-box-shadow: inset -2px -2px 0 0 #2124B3, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #2124B3, inset 2px 2px 0 0 #FFFFFF;
 }
 
 .dark-theme section h2 {
@@ -571,8 +666,16 @@ header {
   background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
 }
 
+.dark-theme section .trending_gif {
+  background-color: #cacaca;
+}
+
 .dark-theme section .trending_gif_title {
   background-image: -webkit-gradient(linear, right top, left top, from(#EE3EFE), to(#2E32FB));
   background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
+}
+
+.dark-theme section .end-message {
+  color: #fff;
 }
 /*# sourceMappingURL=main.css.map */

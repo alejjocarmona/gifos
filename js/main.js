@@ -1,5 +1,6 @@
 const API_KEY = "kdctgRaWLtLtphkQlfiqi4s1moGXjwFK";
-const URL = "http://api.giphy.com/v1/gifs/search?";
+const searchURL = "http://api.giphy.com/v1/gifs/search";
+const trendURL = "https://api.giphy.com/v1/gifs/trending?";
 let gifCategory = "watchmen";
 //"http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=YOUR_API_KEY&limit=5"
 let suggestionNode = document.querySelectorAll(".suggestions_gif");
@@ -26,6 +27,7 @@ const renderTrend = async (responseData) => {
         // el gif
         trendingGif = document.createElement("img");
         trendingGif.className = "oldGif";
+        trendingGif.setAttribute("loading", "lazy");
         trendingGif.src = await responseData[i].images.fixed_height.url;
         if ((responseData[i].images["480w_still"].width/responseData[i].images["480w_still"].height) > 1.8) {
             gifContainer.className = "trending_gif double_gif";      
@@ -58,9 +60,17 @@ const renderSearch = async (responseData) => {
     }
 }
 
-//Traer los datos desde la API
-const dataApi = async (gifCategory) => {
-    let response = await fetch(`${URL}q=${gifCategory}&api_key=${API_KEY}&limit=10`);
+//Traer los datos desde la API para búsqueda
+const dataApiSearch = async (gifCategory) => {
+    let response = await fetch(`${searchURL}?q=${gifCategory}&api_key=${API_KEY}&limit=25`);
+    let data = await response.json();
+    console.log(data.data);
+    return data.data;
+}
+
+//Traer datos desde la API para trending inicial
+const dataApiTrend = async () => {
+    let response = await fetch(`${trendURL}api_key=${API_KEY}&limit=25`);
     let data = await response.json();
     console.log(data.data);
     return data.data;
@@ -71,20 +81,23 @@ const dataApi = async (gifCategory) => {
 // Búsqueda de gifs
 document.getElementById("searchButton").addEventListener("click", function() {
     searchInfo = document.getElementById("searchGif").value;
+    /* tag = document.createElement("a");
+    tag.innerHTML = searchInfo;
+    trendingGifContainer.appendChild(tag); */
     searchTitle = document.getElementById("trendingTitle");
     searchTitle.innerHTML = (`${searchInfo}:`);
     window.location="index.html#trending";
-    dataApi(searchInfo)
+    dataApiSearch(searchInfo)
         .then((response) => renderSearch(response))
         .catch((error) => console.log(error, "Oh no! algo salió mal :("));
 });
 
 //trending Gifs
-dataApi()
+dataApiTrend()
     .then((response) => renderTrend(response))
     .catch((error) => console.log(error, "Oh no! algo salió mal :("));
 
 //Random Gifs
-dataApi(gifCategory)
+dataApiSearch(gifCategory)
         .then((response) => renderSuggestion(response))
         .catch((error) => console.log(error, "Oh no! algo salió mal :("));

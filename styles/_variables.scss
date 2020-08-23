@@ -13,6 +13,16 @@ body {
     justify-content: space-between;
 }
 
+@mixin extra-button {
+    height: 34px;
+    color: #fff;
+    border: 1px solid #4C2F99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
 /*---------- Colores Light Theme ----------*/
 
 $light-background: #fff4fd;
@@ -28,6 +38,11 @@ $box-gradient-light-theme: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
 }
 
+@mixin extra-button-light-theme {
+    background-color: #4180F6;
+    box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+}
+
 /*---------- Colores Dark Theme ----------*/
 
 $dark-background: #120135;
@@ -41,4 +56,9 @@ $box-gradient-dark-theme: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
 @mixin box-content-dark-theme {
     background: #B4B4B4;
     box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
+}
+
+@mixin extra-button-dark-theme {
+    background: #2E32FB;
+    box-shadow: inset -2px -2px 0 0 #2124B3, inset 2px 2px 0 0 #FFFFFF;
 }
