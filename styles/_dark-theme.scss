@@ -5,8 +5,12 @@
         background-image: $box-gradient-dark-theme;
     }
 
-    .navigation_menu-button {
+    .navigation_menu-button, .navigation_button_dropbutton {
         @include nav-button-dark-theme;
+
+        &:hover, &:active {
+            background-color: #CE36DB;
+        }
     }
 
     .navigation_menu-link {
@@ -20,12 +24,6 @@
             &:active {
                 color: #888099;
             }
-        }
-    }
-
-    .navigation_button_dropbutton {
-        p, span {
-            @include nav-button-dark-theme;
         }
     }
     
@@ -68,7 +66,12 @@
         }
 
         .trending_gif {
-            background-color: #cacaca;
+            background-color: #B4B4B4;
+
+            &:hover {
+                background: #B4B4B4;
+                box-shadow: inset -2px -2px 0 0 #5C5C5C, inset 2px 2px 0 0 #FFFFFF;
+            }
 
             &_title {
                 background-image: $box-gradient-dark-theme;

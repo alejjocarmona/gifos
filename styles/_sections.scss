@@ -16,7 +16,7 @@ section {
             width: 23%;
             height: 260px;
             padding: 2px;
-            position: relative; 
+            position: relative;
 
             &_title {
                 @include gif-titles;
@@ -29,14 +29,16 @@ section {
                     cursor: pointer;
                 }
             }
+            
 
-            img {
+            .suggested {
                 width: 100%;
                 height: 238px;
                 object-fit: cover;
             }
 
             .see-more {
+                z-index: 5;
                 width: 81px;
                 position: absolute;
                 bottom: 15px;
@@ -46,6 +48,14 @@ section {
                 p {
                     font-size: 0.9em;
                     line-height: 18px;
+                    padding: 4px 5px;
+                    border: 1px dotted transparent;
+                }
+
+                &:hover {
+                    p {
+                        border-color: #110038;
+                    }
                 }
             }
         }
@@ -66,6 +76,9 @@ section {
             position: relative;
             width: 100%;
             height: 298px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
             img {
                 width: 100%;
@@ -73,10 +86,18 @@ section {
                 object-fit: cover;
             }
 
+            &:hover {
+                padding: 2px;   
+
+                .trending_gif_title {
+                    display: block;
+                }
+            }
+
             &_title {
                 position: absolute;
-                bottom: 0px;
-                width: 100%;
+                bottom: 2px;
+                width: calc(100% - 4px);
                 padding: 0.2em 0;
                 @include gif-titles;
                 display: none;

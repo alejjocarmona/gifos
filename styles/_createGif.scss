@@ -9,6 +9,10 @@ header {
     width: 90%;
     margin: 0 auto;
 
+    img {
+        cursor: pointer;
+    }
+
     img:nth-child(2) {
         margin-left: 10.5px;
     }

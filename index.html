@@ -27,15 +27,16 @@
         <!---------------------- Menú GIFOS ---------------------->
 
         <nav class="navigation">
-            <img class="logo" src="./static/gifOF_logo.png"
+            <img class="logo" href="index.html" src="./static/gifOF_logo.png"
                 alt="Logo de la página con la palabra gif.os, las letras tienen relleno azul claro con sombra azul oscuro">
             <div class="navigation_menu">
                 <div class="navigation_menu-button">
                     <a href="upload.html">Crear Guifos</a>
                 </div>
-                <div class="navigation_menu-button navigation_button_dropbutton dropdown">
+                <div class="navigation_button_dropbutton dropdown">
                     <!-- TODO Javascript - dropdown estados -->
                     <p class="dropdown">Elegir tema</p>
+                    <span class="line"></span>
                     <span>
                         <img class="dropdown-arrow dropdown" src="/static/dropdown.svg" alt="triángulo para activar el botón: Elegir Tema">
                     </span>
@@ -45,7 +46,7 @@
                     </div>
                 </div>
                 <div class="navigation_menu-link">
-                    <a href="upload.html#misGuifos"><span>M</span>is Guifos</a>
+                    <a href="upload.html#misGuifos"><u>M</u>is Guifos</a>
                 </div>
             </div>
         </nav>
@@ -144,7 +145,9 @@
         <h2 class="section_title" id="trendingTitle">
             Tendencias:
         </h2>
-        <div class="trending_gif_container"></div>
+        <div class="trending_gif_container">
+
+        </div>
         <div class="end-message">
             <p>This is the end</p>
             <img src="./static/the-end.png" alt="muñeco acostado llorando">

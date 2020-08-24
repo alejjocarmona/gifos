@@ -36,34 +36,23 @@
         
         &-button {
             width: 9em;
-            height: 2.25em; 
-            border: 1px solid #110038;
-            position: relative;
-            transition: all 0.4s;
+            @include cta-button;
 
-            /*TODO clase extra &:hover {
-                &::after {
-                    content: '';
-                    border: 1px dotted #110038;
-                    width: 8.6em;
-                    height: 1.8em;
-                    position: absolute;
-                    margin: 2px;
-                    top: 0px;
+            &:hover {
+                a {
+                    border-color: #110038;
                 }
-            } */
+            }
 
-            a, div {
-                line-height: 1.1em;
-                text-decoration: none;
-                color: black;
+            a {
+                @include link-properties;
                 width: inherit;
-                height: inherit;
-                display: flex;
-                align-items: center;
+                color: black;
                 justify-content: center;
-
-                cursor: pointer;
+                width: 95%;
+                height: 85%;
+                margin: 2px;
+                border: 1px dotted transparent;
             }
         }
 
@@ -71,20 +60,11 @@
             height: 2.25em;
 
             a {
-                line-height: 1.1em;
-                text-decoration: none;
-                height: inherit;
-                display: flex;
-                align-items: center;
+                @include link-properties;
                 border: 1px dotted transparent;
                 padding-left: 4px;
                 padding-right: 16px;
-                cursor: pointer;
                 transition: all 0.4s;
-
-                span {
-                    text-decoration: underline;
-                }
             }
         }
     }
@@ -93,29 +73,42 @@
         width: 10.5em;
         display: flex;
         justify-content: space-evenly;
+        @include cta-button;
 
-
-        p {
-            width: 78%;
-            height: 100%;
-            border-right: 1px solid #110038;
+        p, span {
+            height: 85%;
+            border: 1px dotted transparent;
+            margin: 2px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
         }
 
+        p {
+            width: 80%;
+        }
+
         span {
-            width: 22%;
+            width: 20%;
+        }
+
+        span.line {
+            width: 1px;
             height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
+            background-color: #110038;
+            margin: 0;
+            border: 0;
         }
 
         .dropdown-content {
             display: none;
+        }
+
+        &:hover {
+            p, span {
+                border-color: #110038;
+            }
         }
     } 
 

@@ -5,8 +5,12 @@
         background-image: $box-gradient-light-theme;
     }
 
-    .navigation_menu-button {
+    .navigation_menu-button, .navigation_button_dropbutton {
         @include nav-button-light-theme;
+
+        &:hover, &:active {
+            background-color: #E6BBE2;
+        }
     }
 
     .navigation_menu-link {
@@ -16,16 +20,10 @@
             &:hover {
                 border-color: #110038;
             }
-
+    
             &:active {
                 color: #887998;
             }
-        }
-    }
-
-    .navigation_button_dropbutton {
-        p, span {
-            @include nav-button-light-theme;
         }
     }
     
@@ -68,11 +66,20 @@
         }
 
         .trending_gif {
-            background-color: #ebebeb;
+            background-color: #e6e6e6;
+
+            &:hover {
+                background: #E6E6E6;
+                box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+            }
 
             &_title {
                 background-image: $box-gradient-light-theme;
             }
+        }
+
+        .end-message {
+            color: #000;
         }
     }
 }

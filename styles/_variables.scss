@@ -13,6 +13,14 @@ body {
     justify-content: space-between;
 }
 
+@mixin cta-button {
+    height: 2.25em; 
+    border: 1px solid #110038;
+    position: relative;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+
 @mixin extra-button {
     height: 34px;
     color: #fff;
@@ -20,6 +28,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+}
+
+@mixin link-properties {
+    line-height: 1.1em;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: inherit;
     cursor: pointer;
 }
 

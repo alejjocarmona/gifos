@@ -118,35 +118,33 @@ body {
   position: relative;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
-  /*TODO clase extra &:hover {
-                &::after {
-                    content: '';
-                    border: 1px dotted #110038;
-                    width: 8.6em;
-                    height: 1.8em;
-                    position: absolute;
-                    margin: 2px;
-                    top: 0px;
-                }
-            } */
+  cursor: pointer;
 }
 
-.navigation_menu-button a, .navigation_menu-button div {
+.navigation_menu-button:hover a {
+  border-color: #110038;
+}
+
+.navigation_menu-button a {
   line-height: 1.1em;
   text-decoration: none;
-  color: black;
-  width: inherit;
-  height: inherit;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: inherit;
+  cursor: pointer;
+  width: inherit;
+  color: black;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  cursor: pointer;
+  width: 95%;
+  height: 85%;
+  margin: 2px;
+  border: 1px dotted transparent;
 }
 
 .navigation_menu-link {
@@ -156,23 +154,19 @@ body {
 .navigation_menu-link a {
   line-height: 1.1em;
   text-decoration: none;
-  height: inherit;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: inherit;
+  cursor: pointer;
   border: 1px dotted transparent;
   padding-left: 4px;
   padding-right: 16px;
-  cursor: pointer;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
-}
-
-.navigation_menu-link a span {
-  text-decoration: underline;
 }
 
 .navigation .navigation_button_dropbutton {
@@ -183,41 +177,52 @@ body {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  height: 2.25em;
+  border: 1px solid #110038;
+  position: relative;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.navigation .navigation_button_dropbutton p, .navigation .navigation_button_dropbutton span {
+  height: 85%;
+  border: 1px dotted transparent;
+  margin: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
 }
 
 .navigation .navigation_button_dropbutton p {
-  width: 78%;
-  height: 100%;
-  border-right: 1px solid #110038;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  cursor: pointer;
+  width: 80%;
 }
 
 .navigation .navigation_button_dropbutton span {
-  width: 22%;
+  width: 20%;
+}
+
+.navigation .navigation_button_dropbutton span.line {
+  width: 1px;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  cursor: pointer;
+  background-color: #110038;
+  margin: 0;
+  border: 0;
 }
 
 .navigation .navigation_button_dropbutton .dropdown-content {
   display: none;
+}
+
+.navigation .navigation_button_dropbutton:hover p, .navigation .navigation_button_dropbutton:hover span {
+  border-color: #110038;
 }
 
 .navigation div {
@@ -292,6 +297,7 @@ body {
 
 .searchtags .tag {
   margin-right: 0.5em;
+  padding: 0 2px;
   height: 34px;
   color: #fff;
   border: 1px solid #4C2F99;
@@ -307,9 +313,14 @@ body {
   cursor: pointer;
 }
 
+.searchtags .tag:hover p {
+  border-color: #110038;
+}
+
 .searchtags .tag p {
   font-size: 0.9em;
-  padding: 0.5em;
+  padding: 6px 3px;
+  border: 1px dotted transparent;
 }
 
 section h2 {
@@ -355,7 +366,7 @@ section .suggestions_gif_container .suggestions_gif_title .close-button {
   cursor: pointer;
 }
 
-section .suggestions_gif_container .suggestions_gif img {
+section .suggestions_gif_container .suggestions_gif .suggested {
   width: 100%;
   height: 238px;
   -o-object-fit: cover;
@@ -363,6 +374,7 @@ section .suggestions_gif_container .suggestions_gif img {
 }
 
 section .suggestions_gif_container .suggestions_gif .see-more {
+  z-index: 5;
   width: 81px;
   position: absolute;
   bottom: 15px;
@@ -385,6 +397,12 @@ section .suggestions_gif_container .suggestions_gif .see-more {
 section .suggestions_gif_container .suggestions_gif .see-more p {
   font-size: 0.9em;
   line-height: 18px;
+  padding: 4px 5px;
+  border: 1px dotted transparent;
+}
+
+section .suggestions_gif_container .suggestions_gif .see-more:hover p {
+  border-color: #110038;
 }
 
 section .trending_gif_container {
@@ -407,6 +425,15 @@ section .trending_gif_container .trending_gif {
   position: relative;
   width: 100%;
   height: 298px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 section .trending_gif_container .trending_gif img {
@@ -416,10 +443,18 @@ section .trending_gif_container .trending_gif img {
      object-fit: cover;
 }
 
+section .trending_gif_container .trending_gif:hover {
+  padding: 2px;
+}
+
+section .trending_gif_container .trending_gif:hover .trending_gif_title {
+  display: block;
+}
+
 section .trending_gif_container .trending_gif_title {
   position: absolute;
-  bottom: 0px;
-  width: 100%;
+  bottom: 2px;
+  width: calc(100% - 4px);
   padding: 0.2em 0;
   color: white;
   font-size: 0.875em;
@@ -467,6 +502,10 @@ header {
   margin: 0 auto;
 }
 
+.goBack img {
+  cursor: pointer;
+}
+
 .goBack img:nth-child(2) {
   margin-left: 10.5px;
 }
@@ -510,10 +549,14 @@ header {
   background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
 }
 
-.light-theme .navigation_menu-button {
+.light-theme .navigation_menu-button, .light-theme .navigation_button_dropbutton {
   background: #F7C9F3;
   -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
           box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.light-theme .navigation_menu-button:hover, .light-theme .navigation_menu-button:active, .light-theme .navigation_button_dropbutton:hover, .light-theme .navigation_button_dropbutton:active {
+  background-color: #E6BBE2;
 }
 
 .light-theme .navigation_menu-link a {
@@ -526,12 +569,6 @@ header {
 
 .light-theme .navigation_menu-link a:active {
   color: #887998;
-}
-
-.light-theme .navigation_button_dropbutton p, .light-theme .navigation_button_dropbutton span {
-  background: #F7C9F3;
-  -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-          box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
 }
 
 .light-theme .searchbar {
@@ -580,12 +617,22 @@ header {
 }
 
 .light-theme section .trending_gif {
-  background-color: #ebebeb;
+  background-color: #e6e6e6;
+}
+
+.light-theme section .trending_gif:hover {
+  background: #E6E6E6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
 }
 
 .light-theme section .trending_gif_title {
   background-image: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
   background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+}
+
+.light-theme section .end-message {
+  color: #000;
 }
 
 .dark-theme {
@@ -597,10 +644,14 @@ header {
   background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
 }
 
-.dark-theme .navigation_menu-button {
+.dark-theme .navigation_menu-button, .dark-theme .navigation_button_dropbutton {
   background: #EE3EFE;
   -webkit-box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
           box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.dark-theme .navigation_menu-button:hover, .dark-theme .navigation_menu-button:active, .dark-theme .navigation_button_dropbutton:hover, .dark-theme .navigation_button_dropbutton:active {
+  background-color: #CE36DB;
 }
 
 .dark-theme .navigation_menu-link a {
@@ -613,12 +664,6 @@ header {
 
 .dark-theme .navigation_menu-link a:active {
   color: #888099;
-}
-
-.dark-theme .navigation_button_dropbutton p, .dark-theme .navigation_button_dropbutton span {
-  background: #EE3EFE;
-  -webkit-box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
-          box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
 }
 
 .dark-theme .searchbar {
@@ -667,7 +712,13 @@ header {
 }
 
 .dark-theme section .trending_gif {
-  background-color: #cacaca;
+  background-color: #B4B4B4;
+}
+
+.dark-theme section .trending_gif:hover {
+  background: #B4B4B4;
+  -webkit-box-shadow: inset -2px -2px 0 0 #5C5C5C, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #5C5C5C, inset 2px 2px 0 0 #FFFFFF;
 }
 
 .dark-theme section .trending_gif_title {

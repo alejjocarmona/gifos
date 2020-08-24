@@ -54,11 +54,19 @@
 
     .tag {
         margin-right: 0.5em;
+        padding: 0 2px;
         @include extra-button;
+
+        &:hover {
+            p {
+                border-color: #110038;
+            }
+        }
 
         p {
             font-size: 0.9em;
-            padding: 0.5em;
+            padding: 6px 3px;
+            border: 1px dotted transparent;
         }
     }
 }

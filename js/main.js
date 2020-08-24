@@ -12,6 +12,7 @@ let gifResults = [];
 const renderSuggestion = async (responseData) => {
     for (let i of suggestionNode.keys()) {
         let suggestionGif = document.createElement("img");
+        suggestionGif.className = "suggested";
         suggestionGif.src = await responseData[i].images.fixed_height.url;
         suggestionNode[i].appendChild(suggestionGif);
     }
