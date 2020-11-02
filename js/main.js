@@ -8,6 +8,20 @@ let trendingGifContainer = document.querySelector(".trending_gif_container");
 let gifs = [];
 let gifResults = [];
 
+// Dropdown
+let dropdownMenu = document.querySelector(".dropdown");
+console.log(dropdownMenu);
+dropdownMenu.addEventListener("click", showThemes);
+function showThemes() {
+    document.getElementById("themeDropdown").classList.toggle("show");
+    console.log("clicked")
+};
+
+
+//Cambio de tema
+
+
+
 //Información traída desde la API para incluir en GifOS
 const renderSuggestion = async (responseData) => {
     for (let i of suggestionNode.keys()) {

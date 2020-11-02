@@ -13,6 +13,18 @@
         }
     }
 
+    .dropdown-content {
+        @include box-content-dark-theme;
+
+        .theme {
+            background: #CCCCCC;
+
+            &:hover, &:active {
+                background: #2E32FB;
+            }
+        }
+    }
+
     .navigation_menu-link {
         a {
             color: white;
