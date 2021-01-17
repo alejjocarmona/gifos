@@ -301,6 +301,7 @@ body {
   -webkit-box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
           box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
   outline: none;
+  cursor: pointer;
 }
 
 .searchbar_input button img {
@@ -455,6 +456,7 @@ section .trending_gif_container .trending_gif {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  cursor: pointer;
 }
 
 section .trending_gif_container .trending_gif img {

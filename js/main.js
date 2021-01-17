@@ -7,19 +7,45 @@ let suggestionNode = document.querySelectorAll(".suggestions_gif");
 let trendingGifContainer = document.querySelector(".trending_gif_container");
 let gifs = [];
 let gifResults = [];
+let gifPage = document.body;
+let logo = document.querySelector(".logo");
+let lupa = document.querySelector(".lupa");
 
 // Dropdown
-let dropdownMenu = document.querySelector(".dropdown");
+let dropdownMenu = document.getElementById("dropdownMenu");
 console.log(dropdownMenu);
 dropdownMenu.addEventListener("click", showThemes);
 function showThemes() {
     document.getElementById("themeDropdown").classList.toggle("show");
-    console.log("clicked")
 };
 
 
-//Cambio de tema
 
+//Cambio de tema
+/* Crear función para cambio de tema día y cambio de archivos */
+/* let sailorDayButton = document.querySelector(".sailor-day");
+console.log(sailorDayButton);
+sailorDayButton.addEventListener("click", sailorDayTheme);
+function sailorDayTheme() {
+
+    if 
+} */
+
+/* Crear función para cambio de tema noche y cambio de archivos */
+let sailorNightButton = document.querySelector(".sailor-night");
+console.log(sailorNightButton);
+sailorNightButton.addEventListener("click", sailorNightTheme);
+function sailorNightTheme() {
+    //poner los if, y guardar en el local storage
+    gifPage.setAttribute("class", "dark-theme");
+    logo.src = "./static/gifOF_logo_dark.png";
+    lupa.src = "./static/lupa_inactive_dark.svg";
+    console.log("In");
+    console.log(gifPage);
+    console.log(logo);
+    console.log(lupa);
+}
+/* Intentar modular ya que son la misma función más o menos */
 
 
 //Información traída desde la API para incluir en GifOS
@@ -34,7 +60,7 @@ const renderSuggestion = async (responseData) => {
 
 // TRENDING Y RESULTADO DE BUSQUEDA
 const renderTrend = async (responseData) => {
-    //creación dinámica del ortis :)
+    //creación dinámica :)
     for (let i of responseData.keys()) {
         //el div para el gif
         let gifContainer = document.createElement("div");
@@ -64,6 +90,7 @@ const renderTrend = async (responseData) => {
     return gifResults;
 }
 
+//Organización de gif doble
 const renderSearch = async (responseData) => {
     gifs = document.querySelectorAll(".trending_gif");
     for (let i = 0; i < gifResults.length; i++) {
