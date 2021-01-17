@@ -624,6 +624,20 @@ header {
   color: #B4B4B4;
 }
 
+.light-theme .searchbar .searchButton {
+  background-color: #F7C9F3;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+  color: #110038;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.light-theme .searchbar .searchButton:hover {
+  background-color: #E6BBE2;
+}
+
 .light-theme .searchtags .tag {
   background-color: #4180F6;
   -webkit-box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
@@ -731,6 +745,20 @@ header {
 .dark-theme .searchbar button {
   background-color: #B4B4B4;
   color: #8F8F8F;
+}
+
+.dark-theme .searchbar .searchButton {
+  background-color: #EE3EFE;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+  color: #FFFFFF;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.dark-theme .searchbar .searchButton:hover {
+  background-color: #CE36DB;
 }
 
 .dark-theme .searchtags .tag {

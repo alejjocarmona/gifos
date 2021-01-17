@@ -9,7 +9,29 @@ let gifs = [];
 let gifResults = [];
 let gifPage = document.body;
 let logo = document.querySelector(".logo");
-let lupa = document.querySelector(".lupa");
+let searchGlass = document.querySelector(".search-glass");
+console.log(gifPage);
+
+// Info tema para mantener colores de acuerdo al tema elegido
+function getTheme () {
+    currentTheme = localStorage.getItem("theme");
+    console.log(currentTheme);
+    if (currentTheme == "light-theme") {
+        gifPage.setAttribute("class", "light-theme");
+        logo.src = "./static/gifOF_logo.png";
+        searchGlass.src = "./static/lupa_inactive.svg";
+    } else {
+        gifPage.setAttribute("class", "dark-theme");
+        logo.src = "./static/gifOF_logo_dark.png";
+        searchGlass.src = "./static/lupa_inactive_dark.svg";
+    }
+}
+
+getTheme()
+
+function setTheme (theme) {
+    localStorage.setItem("theme", theme);
+}
 
 // Dropdown
 let dropdownMenu = document.getElementById("dropdownMenu");
@@ -19,34 +41,57 @@ function showThemes() {
     document.getElementById("themeDropdown").classList.toggle("show");
 };
 
-
-
 //Cambio de tema
-/* Crear función para cambio de tema día y cambio de archivos */
-/* let sailorDayButton = document.querySelector(".sailor-day");
+/* Cambio de tema día y cambio de archivos respectivos */
+let sailorDayButton = document.querySelector(".sailor-day");
 console.log(sailorDayButton);
 sailorDayButton.addEventListener("click", sailorDayTheme);
 function sailorDayTheme() {
+    //poner los if
+    gifPage.setAttribute("class", "light-theme");
+    setTheme("light-theme");
+    logo.src = "./static/gifOF_logo.png";
+    searchGlass.src = "./static/lupa_inactive.svg";
+}
 
-    if 
-} */
-
-/* Crear función para cambio de tema noche y cambio de archivos */
+/* Cambio de tema noche y cambio de archivos respectivos */
 let sailorNightButton = document.querySelector(".sailor-night");
 console.log(sailorNightButton);
 sailorNightButton.addEventListener("click", sailorNightTheme);
 function sailorNightTheme() {
-    //poner los if, y guardar en el local storage
+    //poner los if
     gifPage.setAttribute("class", "dark-theme");
+    setTheme("dark-theme");
     logo.src = "./static/gifOF_logo_dark.png";
-    lupa.src = "./static/lupa_inactive_dark.svg";
-    console.log("In");
-    console.log(gifPage);
-    console.log(logo);
-    console.log(lupa);
+    searchGlass.src = "./static/lupa_inactive_dark.svg";
 }
 /* Intentar modular ya que son la misma función más o menos */
 
+/* Cambiar estado botón de búsqueda */
+document.querySelector('.searchbar').addEventListener('input', function () {
+    document.getElementById("searchGif").style.color = "#000";
+	if (gifPage.classList.contains("light-theme")) {
+        document.getElementById("searchButton").setAttribute("class", "searchButton")
+		searchGlass.src = "./static/lupa.svg";
+	} else {
+		document.getElementById("searchButton").setAttribute("class", "searchButton")
+		searchGlass.src = "./static/lupa_light.svg";
+    }
+    inactiveButton();
+});
+
+/* Botón de búsqueda inactivo */
+function inactiveButton () {
+    searchInfo = document.getElementById("searchGif").value;
+    if (searchInfo.length == 0) {
+        document.getElementById("searchButton").classList.remove("searchButton");
+        if (gifPage.classList.contains("light-theme")) {
+            searchGlass.src = "./static/lupa_inactive.svg";
+        } else {
+            searchGlass.src = "./static/lupa_inactive_dark.svg";
+        }
+    }
+}
 
 //Información traída desde la API para incluir en GifOS
 const renderSuggestion = async (responseData) => {
@@ -123,15 +168,19 @@ const dataApiTrend = async () => {
 // Búsqueda de gifs
 document.getElementById("searchButton").addEventListener("click", function() {
     searchInfo = document.getElementById("searchGif").value;
-    /* tag = document.createElement("a");
-    tag.innerHTML = searchInfo;
-    trendingGifContainer.appendChild(tag); */
-    searchTitle = document.getElementById("trendingTitle");
-    searchTitle.innerHTML = (`${searchInfo}:`);
-    window.location="index.html#trending";
-    dataApiSearch(searchInfo)
-        .then((response) => renderSearch(response))
-        .catch((error) => console.log(error, "Oh no! algo salió mal :("));
+    if (searchInfo.length > 0) {
+        /* tag = document.createElement("a");
+        tag.innerHTML = searchInfo;
+        trendingGifContainer.appendChild(tag); */
+        searchTitle = document.getElementById("trendingTitle");
+        searchTitle.innerHTML = (`${searchInfo}:`);
+        window.location="index.html#trending";
+        dataApiSearch(searchInfo)
+            .then((response) => renderSearch(response))
+            .catch((error) => console.log(error, "Oh no! algo salió mal :("));
+        } else {
+            alert("Ingresa un valor para realizar la búsqueda :)");
+        }
 });
 
 //trending Gifs

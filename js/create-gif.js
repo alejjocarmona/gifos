@@ -1,3 +1,5 @@
+let gifPage = document.body;
+let logo = document.querySelector(".logo");
 let backButton = document.getElementById("arrow");
 video = document.getElementById("captureGif");
 startCameraButton = document.getElementById("camera");
@@ -10,6 +12,21 @@ let recordedGif;
 backButton.addEventListener("click", function () {
     window.location="index.html";
 })
+
+// Info tema para mantener colores de acuerdo al tema elegido
+function getTheme () {
+    currentTheme = localStorage.getItem("theme");
+    console.log(currentTheme);
+    if (currentTheme == "light-theme") {
+        gifPage.setAttribute("class", "light-theme");
+        logo.src = "./static/gifOF_logo.png";
+    } else {
+        gifPage.setAttribute("class", "dark-theme");
+        logo.src = "./static/gifOF_logo_dark.png";
+    }
+}
+
+getTheme()
 
 //permitir video
 startCameraButton.addEventListener("click", function getStreamAndRecord () {
